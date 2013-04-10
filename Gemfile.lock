@@ -1,0 +1,41 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    bson (1.8.4)
+    columnize (0.3.6)
+    daemons (1.1.9)
+    debugger (1.5.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.0)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.0)
+    eventmachine (1.0.3)
+    mongo (1.8.4)
+      bson (~> 1.8.4)
+    mongo_hash (0.1.3)
+      mongo
+    rack (1.5.2)
+    rack-protection (1.5.0)
+      rack
+    rake (10.0.4)
+    sinatra (1.4.2)
+      rack (~> 1.5, >= 1.5.2)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    tilt (1.3.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  debugger
+  mongo
+  mongo_hash
+  rake
+  sinatra
+  thin
