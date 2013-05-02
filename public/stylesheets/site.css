@@ -1,0 +1,113 @@
+
+
+header {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.head-top {
+    background: #0a2e6b;
+    color: #FFFFFF;
+    font-size: 72px;
+}
+
+.head-bottom {
+    background: #a40309;
+    color: white;
+    font-size: 20px;
+    padding: 12px;
+}
+
+.head-bottom p {
+    margin: 0;
+}
+
+.content {
+    margin-top: 171px;
+}
+
+.quote-box {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote-box > span {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+    zoom: 1; /* Trigger hasLayout */
+    width: 45%;
+    text-align: center;
+}
+
+.quote-content {
+    text-align: left;
+    vertical-align: top;
+    height: 100%
+}
+
+.quote-link {
+
+}
+
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0.25em 0;
+    padding: 0.25em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #383838;
+}
+
+blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: 0;
+    top: -20px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+    text-align: left;
+}
+ 
+blockquote cite:before {
+    content: "\2014 \2009";
+}
+
+.response {
+    font-family: Georgia, serif;
+    font-style: italic;
+    text-align: right;
+    margin: 0.25em 0;
+    padding: 0.25em 40px;
+}
+
+hr {
+    width: 75%;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+}
+
+footer > a {
+    color: #a40309;
+    text-decoration: none;
+}

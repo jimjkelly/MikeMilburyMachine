@@ -1,1 +1,29 @@
-ohai
+<header class="tk-adelle">
+    <div class="head-top">
+        THE MIKE MILBURY MACHINE
+    </div>
+    <div class="head-bottom">
+        <p>Dredging Up Quotes on the NHL's Most Prolific Goal Scorer from Milburyesque Losers</p>
+        <p>(And Celebrating Ovi Responding the Only Way He Knows How)</p>
+    </div>
+</header>
+<div class="content">
+    <% @lawls.each do |lawl| %>
+        <div class="quote-box">
+            <span class="quote-content">
+                <blockquote>
+                    <%= lawl['quote'] %>
+                    <cite><%= link(lawl['link'], lawl['douche']) %></cite>
+                </blockquote>
+                <p class="response">but Ovi says...</p>
+            </span>
+            <span class="ovi-link">
+                <object width="486" height="291" id="embed" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"><param name="movie" value="http://nhl.cdn.neulion.net/u/videocenter-v1/embed.swf" /><param name="quality" value="high" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="flashVars" value="<%= lawl['ovi'] %>&server=http://video.capitals.nhl.com/videocenter/&pageurl=http://video.capitals.nhl.com/videocenter/&nlwa=http://app2.neulion.com/videocenter/nhl/" /><embed name="embed" pluginspage="http://www.adobe.com/go/getflashplayer" src="http://nhl.cdn.neulion.net/u/videocenter-v1/embed.swf" type="application/x-shockwave-flash" width="486" height="291" quality="high" allowFullScreen="true" allowScriptAccess="always" flashVars="<%= lawl['ovi'] %>&server=http://video.capitals.nhl.com/videocenter/&pageurl=http://video.capitals.nhl.com/videocenter/&nlwa=http://app2.neulion.com/videocenter/nhl/"></embed></object>
+            </span>
+        </div>
+    <% end %>
+</div>
+<hr>
+<footer class="tk-adelle">
+    THE MIKE MILBURY MACHINE - SOURCE: <%= link('https://github.com/jimjkelly/MikeMilburyMachine', 'GitHub') %> - COME AT ME, BRO: <%= link('http://twitter.com/pthread', '@pthread') %>
+</footer>

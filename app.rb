@@ -29,8 +29,8 @@ helpers do
 end
 
 get '/' do
-  getlawls.to_s
-  #erb :index
+  @lawls = getlawls()
+  erb :index
 end
 
 get '/submit' do
