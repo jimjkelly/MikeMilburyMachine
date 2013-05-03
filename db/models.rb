@@ -22,7 +22,7 @@ end
 def getlawls
     db = get_connection
     @collection = db.collection(COLLECTION)
-    return MongoHash.find(@collection).values
+    return MongoHash.find(@collection)
 end
 
 def get_connection
