@@ -11,10 +11,22 @@ GEM
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.0)
     eventmachine (1.0.3)
+    hashie (2.0.4)
     mongo (1.8.4)
       bson (~> 1.8.4)
     mongo_hash (0.1.3)
       mongo
+    multi_json (1.7.2)
+    oauth (0.4.7)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.16)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -36,6 +48,8 @@ DEPENDENCIES
   debugger
   mongo
   mongo_hash
+  omniauth
+  omniauth-twitter
   rake
   sinatra
   thin

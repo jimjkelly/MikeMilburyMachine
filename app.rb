@@ -13,6 +13,10 @@ error do
 end
 
 helpers do
+  def authorized?
+    session[:auth] && session[:auth]['secret'] == ENV['OAUTH_TOKEN_SECRET']
+  end
+
   def link(url,text=url,opts={})
     attributes = ""
     opts.each { |key,value| attributes << key.to_s << "=\"" << value << "\" "}
@@ -33,11 +37,33 @@ get '/' do
   erb :index
 end
 
+get '/signin' do
+  erb :signin
+end
+
+get '/auth/twitter/callback' do
+  session[:auth] = request.env['omniauth.auth']['credentials']
+
+  if authorized?
+    redirect '/submit'
+  else
+    redirect '/signin'
+  end 
+end
+
 get '/submit' do
-  erb :submit
+  if authorized?
+    erb :submit
+  else
+    redirect '/signin'
+  end
 end
 
 post '/submit' do
-  addlawl(params[:quote], params[:douche], params[:link], params[:ovi])
-  erb :submit
+  if authorized?
+    addlawl(params[:quote], params[:douche], params[:link], params[:ovi])
+    erb :submit
+  else
+    redirect '/signin'
+  end
 end

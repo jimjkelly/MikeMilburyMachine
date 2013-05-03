@@ -1,13 +1,17 @@
-<form action=<%= url('/submit')%> method="post">
-  <p>
-    <label for="douche">Name: </label>
-    <input type="text" name="douche"></br>
-    <label for="quote">Quote: </label>
-    <textarea name="quote"></textarea></br>
-    <label for="link">Link to Quote: </label>
-    <input type="text" name="link"></br>
-    <label for="ovi">Link to Goal: </label>
-    <input type="text" name="ovi"></br>
-    <input type="submit" value="Submit">
-  </p>
-</form>
+<div class="login tk-adelle">
+    <form action=<%= url('/submit')%> method="post">
+      <span class="labels">
+        <label for="douche">Name: </label></br>
+        <label for="quote">Quote: </label></br>
+        <label for="link">Link to Quote: </label></br>
+        <label for="ovi">Link to Goal: </label></br>
+      </span>
+      <span class="inputs">
+        <input type="text" name="douche"></br>
+        <textarea name="quote"></textarea></br>
+        <input type="text" name="link"></br>
+        <input type="text" name="ovi"></br>
+        <input type="submit" value="Submit">
+      </span>
+    </form>
+</div>

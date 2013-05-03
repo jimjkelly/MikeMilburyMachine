@@ -2,6 +2,7 @@
 $:.unshift File.dirname(__FILE__)
 require 'mongo_hash'
 require 'db/models'
+require 'omniauth'
 require 'sinatra'
 require 'bundler'
 require 'logger'
@@ -11,6 +12,12 @@ require 'uri'
 Bundler.setup
 Bundler.require
 
+set :sessions, true
+set :session_secret, ENV["SESSION_KEY"] || 'DEFAULT_SECRET_KEY'
+
+use OmniAuth::Builder do
+    provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
+end
 
 configure :development do
   unless ENV['MONGO_URL_DEV']

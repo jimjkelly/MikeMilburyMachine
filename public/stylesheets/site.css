@@ -53,10 +53,6 @@ header {
     height: 100%
 }
 
-.quote-link {
-
-}
-
 blockquote {
     font-family: Georgia, serif;
     font-size: 18px;
@@ -96,6 +92,34 @@ blockquote cite:before {
     text-align: right;
     margin: 0.25em 0;
     padding: 0.25em 40px;
+}
+
+.login {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    text-align: center;
+    overflow: auto;
+}
+
+.login > span {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+}
+
+.labels {
+    float: left;
+    text-align: right;
+}
+
+.inputs {
+    text-align: left;
+}
+
+label {
+    vertical-align: top;
 }
 
 hr {
