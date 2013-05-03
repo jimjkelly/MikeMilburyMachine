@@ -10,7 +10,7 @@ def addlawl(quote, douche, link, ovi)
     @collection = db.collection(COLLECTION)
     mh = MongoHash.new(@collection)
 
-    mh[MongoHash.find(@collection).length + 1] = {
+    mh = {
         'quote' => quote,
         'douche' => douche,
         'link' => link,
