@@ -58,7 +58,7 @@ end
 post '/submit' do
   if authorized?
     addlawl(params[:quote], params[:douche], params[:link], params[:ovi])
-    erb :index
+    redirect '/'
   else
     redirect '/signin'
   end
