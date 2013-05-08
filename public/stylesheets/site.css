@@ -43,8 +43,15 @@ header {
     display: -moz-inline-box;
     *display: inline; /* For IE7 */
     zoom: 1; /* Trigger hasLayout */
-    width: 45%;
     text-align: center;
+}
+
+.display > span {
+    width: 45%;
+}
+
+.submit > span {
+    width: 25%;
 }
 
 .quote-content {

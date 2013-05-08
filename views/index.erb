@@ -8,8 +8,30 @@
     </div>
 </header>
 <div class="content">
+    <% if @authorized %>
+       <div class="quote-box submit">
+            <form action=<%= url('/submit')%> method="post">
+                <span class="user">
+                    <img src="<%= @photo %>">
+                </span>
+                <span class="quote-content">
+                    <blockquote>
+                        <textarea name="quote"></textarea>
+                        <cite><input type="text" name="douche"></cite>
+                    </blockquote>
+                    <input type="text" name="link">
+                </span>
+                <span class="ovi-link">
+                    <input type="text" name="ovi">
+                </span>
+                <span>
+                    <input type="submit" value="Submit" style="font-family: Verdana; font-size: 10pt; background-color: #000080; color: #FFFFFF; border-style:none">
+                </span>
+            </form>
+        </div>
+    <% end %>
     <% @lawls.each do |lawl| %>
-        <div class="quote-box">
+        <div class="quote-box display">
             <span class="quote-content">
                 <blockquote>
                     <%= lawl[lawl.keys[0]]['quote'] %>

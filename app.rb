@@ -33,7 +33,10 @@ helpers do
 end
 
 get '/' do
+  @authorized = authorized?
+  @photo = session[:photo]
   @lawls = getlawls()
+
   erb :index
 end
 
@@ -43,26 +46,19 @@ end
 
 get '/auth/twitter/callback' do
   session[:auth] = request.env['omniauth.auth']['credentials']
+  session[:photo] = request.env['omniauth.auth']['info']['image']
 
   if authorized?
-    redirect '/submit'
+    redirect '/'
   else
     redirect '/signin'
   end 
 end
 
-get '/submit' do
-  if authorized?
-    erb :submit
-  else
-    redirect '/signin'
-  end
-end
-
 post '/submit' do
   if authorized?
     addlawl(params[:quote], params[:douche], params[:link], params[:ovi])
-    erb :submit
+    erb :index
   else
     redirect '/signin'
   end
