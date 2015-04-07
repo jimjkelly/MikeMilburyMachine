@@ -7,9 +7,34 @@
     <title>The Mike Milbury Machine</title>
 
     <link rel="stylesheet" href="/stylesheets/site.css" />
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
     <script type="text/javascript">
+      function hasFlash() {
+        hasFlash = false;
+        try {
+          var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+          if (fo) {
+            hasFlash = true;
+          }
+        } catch (e) {
+          if (navigator.mimeTypes
+                && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
+                && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
+            hasFlash = true;
+          }
+        }
 
+        return hasFlash;
+      }
+      $(document).ready(function() {
+        if (!hasFlash()) {
+          $('span.ovi-link').html('Sorry, Flash is required to view the videos.');
+        }
+      });
+    </script>
+
+    <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-40014421-1']);
       _gaq.push(['_trackPageview']);
@@ -19,7 +44,6 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-
     </script>
   </head>
   <body>
